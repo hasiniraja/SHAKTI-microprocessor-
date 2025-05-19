@@ -239,7 +239,8 @@ SHAKTI has various processor classes for different applications:
 
 ## Research Component
 
-* **GitHub:** [SHAKTI GitHub](https://github.com/shaikt)
+* **Wikipedia:** [SHAKTI](https://charleslabs.fr/en/project-A+basic+VHDL+processor)
+* **GitLab:** [SHAKTI GitLab](https://gitlab.com/shaktiproject)
 * **Paper:** "SHAKTI: An Open-Source Processor Ecosystem Based on RISC-V"
 * **Communities:** LinkedIn, Discord, RISC-V Intl.
 
