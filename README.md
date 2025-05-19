@@ -56,6 +56,38 @@ SHAKTI has various processor classes for different applications:
 
 ## Architecture Overview
 
+### Block Diagram:
+```text
++-----------------------------+
+|   Instruction Cache (I$)   |
++-----------------------------+
+             |
+        +----v-----+
+        |  Fetch   |  <-- PC (Program Counter)
+        +----------+
+             |
+        +----v-----+
+        | Decode   |
+        | Register |
+        |  Fetch   |
+        +----------+
+             |
++------------v-------------+
+|        Execute           |
+|  ALU (Integer & Branch)  |
+|  MUL/DIV (Optional)      |
++------------+-------------+
+             |
+        +----v-----+
+        | Memory   |  <-- Data Cache (D$)
+        +----------+
+             |
+        +----v-----+
+        | Write Back |
+        +------------+
+```
+
+
 ### Components and Interactions:
 
 * **Instruction Fetch:** From L1 instruction cache using PC.
@@ -106,6 +138,17 @@ SHAKTI has various processor classes for different applications:
 ## Pipelining
 
 * **Stages:** IF → ID → EX → MEM → WB
+
+### Pipeline Diagram:
+```text
+Clock Cycle →   1     2     3     4     5     6     7
+
+Instr 1       | IF | ID | EX | MEM | WB  |
+Instr 2             | IF | ID | EX  | MEM | WB  |
+Instr 3                   | IF | ID  | EX  | MEM | WB  |
+...
+```
+
 
 ### Hazards:
 
@@ -239,8 +282,7 @@ SHAKTI has various processor classes for different applications:
 
 ## Research Component
 
-* **Wikipedia:** [SHAKTI](https://en.wikipedia.org/wiki/SHAKTI_(microprocessor))
-* **GitLab:** [SHAKTI GitLab](https://gitlab.com/shaktiproject)
+* **GitHub:** [SHAKTI GitHub](https://github.com/shaikt)
 * **Paper:** "SHAKTI: An Open-Source Processor Ecosystem Based on RISC-V"
 * **Communities:** LinkedIn, Discord, RISC-V Intl.
 
